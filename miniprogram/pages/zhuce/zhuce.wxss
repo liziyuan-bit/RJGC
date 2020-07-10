@@ -1,0 +1,13 @@
+/* miniprogram/pages/zhuce/zhuce.wxss */
+.input{
+        border: 1px solid gainsboro;
+        margin:20rpx;
+}
+
+.zhuceBtn { 
+        width: 80%; 
+        margin-top: 40px; 
+       } 
+.radio{
+        margin-top: 20px; 
+}

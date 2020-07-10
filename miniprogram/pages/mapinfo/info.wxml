@@ -1,0 +1,5 @@
+<!--miniprogram/pages/mapinfo/info.wxml-->
+<text>miniprogram/pages/mapinfo/info.wxml</text>
+<view class="text_box" wx:for="{{steps}}" wx:key="key">
+  {{item.instruction}}
+</view>

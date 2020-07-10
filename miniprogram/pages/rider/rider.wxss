@@ -1,0 +1,96 @@
+/* miniprogram/pages/order/order.wxss */
+.header{
+      width: 750rpx;
+      height: 90rpx;
+      border: 1px solid black;
+    }
+    
+    .hdCon{
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hdCon navigator, .hdCon .kefu{
+      height: 50rpx;
+    }
+    .hdCon image{
+      width: 70rpx;
+    }
+    .kefu{
+      position: relative;
+      animation: spark linear 3s infinite alternate;
+    }
+    .kefu .btn{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .addorder{
+      display: flex;
+      flex-direction: row;
+    }
+    .show{
+      width: 750rpx;
+      height: 1100rpx;
+      display: flex;
+    }
+    .label{
+      width:100px;
+    }
+    .kind{
+      width: 200rpx;
+      height: 1100rpx;
+      border: 1px black solid;
+    }
+    .kindCon{
+      width: 100%;
+      height: 130rpx;
+      background: rgb(190, 186, 186);
+    }
+    .kindContest{
+      width: 100%;
+      height: 80rpx;
+      background: rgb(211, 69, 69);
+    }
+    .kindContest1{
+      width: 100%;
+      height: 80rpx;
+      background: rgb(69, 107, 211);
+    }
+    
+    .kind .kindbtn{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    
+    .manu{
+      width: 550rpx;
+      height: 1100rpx;
+      border: 1px black solid;
+    }
+    .manuShow{
+      display: flex;
+      height: 800rpx;
+      flex-direction: column;
+    }
+    .manuCon{
+      width: 100%;
+      height: 100rpx;
+      background: white;
+    }
+    .manudelbtn{
+      width: 100rpx;
+      height: 80rpx;
+      border: 1px black solid;
+      top: 0;
+      left: 0;
+    }
+    

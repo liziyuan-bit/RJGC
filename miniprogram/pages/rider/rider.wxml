@@ -1,0 +1,81 @@
+<!--miniprogram/pages/order/order.wxml-->
+<!--text>miniprogram/pages/order/order.wxml</text-->
+<view class="header">
+	<view class="continer hdCon">
+		<navigator open-type="switchTab" url="/pages/store/store" class="logo">
+			<image mode="widthFix" src="/images/logo.jpg"></image>
+		</navigator>
+		<view class="kefu">
+			<button class="btn" open-type="contact"></button>
+			<image mode="widthFix" src="/images/kefu.jpg"></image>
+		</view>
+	</view>
+</view>
+
+<view class="show">
+	<scroll-view scroll-y>
+		<view class="kind">
+			<view wx:for="{{orderlist}}" class="kindCon" bindtap="selectorder" data-order="{{index}}" data-id="{{item._id}}" hover-class="show">
+				{{item.customer_phone}}
+			</view>
+			<view class="kindContest" bindtap="addorder">添加定单</view>
+			<view class="kindContest1" bindtap="delorder">删除定单</view>
+		</view>
+	</scroll-view>
+
+	<scroll-view scroll-y>
+		<view class="manu">
+			<view class="kindContest1">定单详情</view>
+			<view wx:for="{{orderdetail}}" class="manuShow">
+				<text  class="manuCon" >用户：{{item.customer_username}} </text>
+				<text  class="manuCon" bindtap="tomap" >地址：{{item.customer_address}}</text>
+				<text  class="manuCon" >电话：{{item.customer_phone}}</text>
+				<text  class="manuCon" >订单状态：{{item.orderstatus}}</text>
+				<text  class="manuCon" >日期：{{item.date}}</text>
+				<text  class="manuCon" >time：{{item.time}}</text>
+				<text  class="manuCon" >价格：{{item.totalprice}}</text>
+				<text  class="manuCon" >骑手电话：{{item.rider_id}}</text>
+
+			</view>
+			<view class="kindContest1">设置定单状态</view>
+			<radio-group class="radio-group" bindchange="radioChange">
+				<label class="radio" wx:for="{{items}}">
+					<radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+				</label>
+			</radio-group>
+		</view>
+	</scroll-view>
+</view>
+
+<modal hidden="{{addorderhidden}}" title="添加定单" confirm-text="确定" cancel-text="取消" bindcancel="addordercancel" bindconfirm="addorderconfirm">
+	<view style="display:flex;">
+		<label class="label">address:</label>
+		<input bindinput="addressinput" placeholder="输入customer_address"></input>
+	</view>
+	<view style="display:flex;">
+		<label class="label">phone:</label>
+		<input bindinput="phoneinput" placeholder="输入customer_phone"></input>
+	</view>
+	<view style="display:flex;">
+		<label class="label">realname:</label>
+		<input bindinput="realnameinput" placeholder="输入customer_realname"></input>
+	</view>
+	<view style="display:flex;">
+		<label class="label">username:</label>
+		<input bindinput="usernameinput" placeholder="输入customer_username"></input>
+	</view>
+	<view style="display:flex;">
+		<label class="label">order_id:</label>
+		<input bindinput="order_idinput" placeholder="输入order_id"></input>
+	</view>
+	<view style="display:flex;">
+		<label class="label">store:</label>
+		<input bindinput="storeinput" placeholder="输入store"></input>
+	</view>
+	<view style="display:flex;">
+		<label class="label">status:</label>
+		<input bindinput="statusinput" placeholder="输入status"></input>
+	</view>
+</modal>
+
+<modal hidden="{{delorder}}" title="请选择订单条目" confirm-text="确定" bindconfirm="warningconfirm1" bindcancel="warningconfirm1"> </modal>

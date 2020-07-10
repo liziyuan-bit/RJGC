@@ -1,0 +1,126 @@
+.header{
+  width: 750rpx;
+  height: 90rpx;
+  border: 1px solid black;
+}
+.hdCon{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hdCon navigator, .hdCon .kefu{
+  height: 50rpx;
+}
+.hdCon image{
+  width: 70rpx;
+}
+.kefu{
+  position: relative;
+  animation: spark linear 3s infinite alternate;
+}
+.kefu .btn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.show{
+  width: 750rpx;
+  height: 1100rpx;
+  display: flex;
+}
+
+.kind{
+  width: 200rpx;
+  height: 1100rpx;
+  border: 1px black solid;
+}
+.kindCon{
+  width: 100%;
+  height: 130rpx;
+  background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight:700;
+  font-size: 20px;
+}
+.kind_bt_hover{
+  background-color: #87CEFF;
+}
+.kind .kindbtn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.manu{
+  width: 550rpx;
+  height: 1100rpx;
+  border: 1px black solid;
+}
+.manuShow{
+  display: flex;
+}
+.manuCon{
+  width: 100%;
+  height: 130rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kinddelbtn{
+  width: 100%;
+  margin-top: 10rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 13px;
+}
+.manudelbtn{
+  width: 30%;
+  margin-top: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: gray;
+  color: white;
+  border-radius: 98rpx;
+  text-align: center; 
+}
+
+.kind_del_hover{
+  background-color: #87CEFF;
+}
+
+.manu_del_hover{
+  background-color: #87CEFF;
+}
+
+.jump{
+  display: flex
+}
+
+.navigator-hover{
+  background: #E6F3F9;
+}
+
+.jump_bt{
+  width: 100%;
+  margin-top: 10rpx;
+  height: 80rpx;
+  line-height: 35rpx;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+}

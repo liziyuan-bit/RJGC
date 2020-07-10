@@ -1,0 +1,58 @@
+<view class="header">
+  <view class="continer hdCon">
+    <navigator open-type="switchTab" url="/pages/store/store" class="logo">
+      <image mode="widthFix" src="/images/logo.jpg"></image>
+    </navigator>
+    <view class="kefu">
+      <button class="btn" open-type="contact"></button>
+      <image mode="widthFix" src="/images/kefu.jpg"></image>
+    </view>
+  </view>
+</view>
+
+<view class="jump">
+  <button class="jump_bt" bindtap="jump_1" hover-class="navigator-hover">管理店铺</button>
+  <button class="jump_bt" bindtap="jump_2" hover-class="navigator-hover">管理订单</button>
+  <button class="jump_bt" bindtap="jump_3" hover-class="navigator-hover">统计数据</button>
+</view>
+
+<scroll-view scroll-y>
+  <view wx:for="{{orderlist}}" class="orderCon">
+    <view class="line">订单号：{{item._id}}</view>
+    <view class="line">下单时间：{{item.date}} {{item.time}}</view>
+    <view class="line">顾客用户名：{{item.customer_username}}</view>
+    <view class="line">顾客姓名：{{item.customer_realname}}</view>
+    <view class="line">顾客地址：{{item.customer_address}}</view>
+    <view class="line">顾客电话：{{item.customer_phone}}</view>
+    <view class="line">总价：{{item.totalprice}}元</view>
+    <view class="line">订单状态：{{item.orderstatus}}</view>
+    <view class="order_cmd_btn">
+      <button class="btn" bindtap="contect_customer" data-phone="{{item.customer_phone}}">联系顾客</button>
+      <button class="btn" bindtap="show_order_detail" data-order_id="{{item._id}}">详细信息</button>
+      <button class="btn" bindtap="show_rider_info" data-rider_id="{{item.rider_id}}">骑手信息</button>
+    </view>
+    <view class="line">——————————————————————————————————————</view>
+  </view>
+</scroll-view>
+
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <scroll-view scroll-y>
+    <view class="order_form" wx:for="{{order_detail_list}}">
+      <view class="order_detail_text">{{item.dish_name}}(数量:{{item.num}})</view>
+    </view>
+  </scroll-view>
+  <button bindtap="closeModal">返回</button>
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showriderinfo}}"></view>
+<view class="modalDlg" wx:if="{{showriderinfo}}">
+  <scroll-view scroll-y>
+    <view class="order_detail_text">骑手姓名：{{rider_info[0].username}}</view>
+    <view class="order_detail_text">骑手电话：{{rider_info[0].phone}}</view>
+  </scroll-view>
+  <button bindtap="contect_rider">联系骑手</button>
+  <button bindtap="closeriderinfo">返回</button>
+</view>
+

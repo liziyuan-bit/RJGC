@@ -1,0 +1,116 @@
+.header{
+  width: 750rpx;
+  height: 90rpx;
+  border: 1px solid black;
+}
+.hdCon{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hdCon navigator, .hdCon .kefu{
+  height: 50rpx;
+}
+.hdCon image{
+  width: 70rpx;
+}
+.kefu{
+  position: relative;
+  animation: spark linear 3s infinite alternate;
+}
+.kefu .btn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.orderCon{
+
+}
+
+.line{
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: left;
+  height: 2rem;
+  align-items: center;
+}
+
+.order_cmd_btn{
+  display: flex;
+  flex-direction: row;
+}
+
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.7;
+}
+ 
+.modalDlg{
+    width: 580rpx;
+    height: 620rpx;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999;
+    margin: -370rpx 85rpx;
+    background-color: #fff;
+    border-radius: 36rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn{
+  width: 100%;
+  margin-top: 10rpx;
+  height: 50rpx;
+  line-height: 20rpx;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+}
+.closeModal{
+  width: 100%;
+  margin-top: 10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+}
+
+.order_detail_text{
+  text-align: center;
+}
+
+.jump{
+  display: flex
+}
+
+.navigator-hover{
+  background: #E6F3F9;
+}
+
+.jump_bt{
+  width: 100%;
+  margin-top: 10rpx;
+  height: 80rpx;
+  line-height: 35rpx;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+}

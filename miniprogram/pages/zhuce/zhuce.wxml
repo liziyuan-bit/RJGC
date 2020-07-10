@@ -1,0 +1,17 @@
+<!--miniprogram/pages/zhuce/zhuce.wxml-->
+
+输入用户名（卖家将作为店铺名）：
+<input class="input" bindinput="getName"></input>
+输入用户密码：
+<input class="input" bindinput="getMiMa"></input>
+输入电话号码（您的登录账号）：
+<input class="input" bindinput="getZhangHao"></input>
+
+请选择注册类型：
+<radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+</radio-group>
+
+<button class="zhuceBtn" bindtap="zhuce" type="primary">注册</button>

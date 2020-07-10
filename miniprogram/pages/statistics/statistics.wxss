@@ -1,0 +1,40 @@
+/* miniprogram/pages/statistics/statistics.wxss */
+.table {
+ border: 0px solid darkgray;
+}
+.tr {
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ height: 3rem;
+ align-items: center;
+}
+.td {
+ width:40%;
+ justify-content: center;
+ text-align: center;
+}
+.bg-w{
+ background: snow;
+}
+.bg-g{
+ background: #E6F3F9;
+}
+.jump{
+  display: flex
+}
+
+.navigator-hover{
+  background: #E6F3F9;
+}
+
+.jump_bt{
+  width: 100%;
+  margin-top: 10rpx;
+  height: 80rpx;
+  line-height: 35rpx;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+}

@@ -1,0 +1,91 @@
+.header{
+  width: 750rpx;
+  height: 90rpx;
+  border: 1px solid black;
+}
+
+.hdCon{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hdCon navigator, .hdCon .kefu{
+  height: 50rpx;
+}
+.hdCon image{
+  width: 70rpx;
+}
+.kefu{
+  position: relative;
+  animation: spark linear 3s infinite alternate;
+}
+.kefu .btn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.dishlist{
+  display: flex;
+}
+.show{
+  width: 750rpx;
+  height: 1100rpx;
+  display: flex;
+  flex-direction: column; 
+}
+.pm{
+  display: flex;
+}
+.mainscreen{
+  width:750rpx;
+  height:100vh;
+}
+
+.bottom{
+  width:max-content;
+  height: 100rpx;
+  display: flex;
+}
+.kind{
+  width: 200rpx;
+  height: 1100rpx;
+  border: 1px black solid;
+}
+.kindCon{
+  width: 100%;
+  height: 130rpx;
+  background: gray;
+}
+.kind .kindbtn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.manu{
+  width: 550rpx;
+  height: 1100rpx;
+  border: 1px black solid;
+}
+.manuShow{
+  display: flex;
+}
+.manuCon{
+  width: 100%;
+  height: 130rpx;
+  background: white;
+}
+.manudelbtn{
+  width: 100rpx;
+  height: 80rpx;
+  border: 1px black solid;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,104 @@
+<view class="header">
+  <view class="continer hdCon">
+    <navigator open-type="switchTab" url="/pages/store/store" class="logo">
+      <image mode="widthFix" src="/images/logo.jpg"></image>
+    </navigator>
+    <view class="kefu">
+      <button class="btn" open-type="contact"></button>
+      <image mode="widthFix" src="/images/kefu.jpg"></image>
+    </view>
+  </view>
+</view>
+
+<view class="show">
+
+  <view class="mainscreen">
+    
+      <view class="home" wx:if="{{hs}}">
+        <text>首页</text>
+        <view class="shoplist" wx:if="{{shops}}">
+          <text>商家列表</text>
+          <view wx:for="{{storelist}}" class="sj" bindtap="sj" data-store="{{index}}">
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+        <view class="dishlist" wx:if="{{dishs}}">
+          <text>菜品列表</text>
+          <scroll-view scroll-y>
+            <view wx:for="{{kindlist}}" class="kindCon" bindtap="selectkind" data-kind="{{index}}">
+              {{item.kind}}
+            </view>
+          </scroll-view>
+
+<scroll-view scroll-y>
+    <view class="manu">
+      <view wx:for="{{manulist}}" class="manuShow">
+        <text  class="manuCon" >{{item.name}} {{item.price}}
+        </text>
+        <view class="addtoorder" data-_id="{{item._id}}" data-price="{{item.price}}" data-name="{{item.name}}" bindtap="addtoorder">+</view>
+        <text></text>
+        <view class="deletefromorder" data-_id="{{item._id}}"  bindtap="deletefromorder">-</view>
+      </view>
+    </view>
+  </scroll-view>
+
+          <button bindtap="back">返回</button>
+        </view>
+      </view>
+      <view wx:if="{{gs}}">
+        <scroll-view>
+
+          <text>购物车     总价：{{totalprice}}</text>
+          <view wx:for="{{order}}">
+          <text class="manuCon">{{item.name}} {{item.singleprice}}</text>
+          <view class="pm">
+            <view class="addtoorder" data-_id="{{item._id}}" data-price="{{item.price}}" data-name="{{item.name}}" bindtap="addtoorder">+</view>
+            <text>{{item.num}}</text>
+            <view class="deletefromorder" data-_id="{{item._id}}"  bindtap="deletefromorder">-</view>
+</view>
+          </view>
+          <button bindtap="xd">下单</button>
+        </scroll-view>
+      </view>
+      <view class="order" wx:if="{{ds}}">
+        <text>订单</text>
+        <view wx:for="{{orderhistory}}">{{item.store}} 价格：{{item.totalprice}}元，下单日期：{{item.date}},状态：{{item.orderstatus}}</view>
+      </view>
+      <view class="mine" wx:if="{{ws}}">
+        <text>我的</text>
+        <view >
+        姓名： {{realname}}\n
+         <input class="inputText" placeholder="姓名" bindinput="nameInput" /> 
+        用户名： {{username}}\n
+         <input class="inputText" placeholder="用户名" bindinput="unameInput" /> 
+        所在地区：{{customeraddress}}\n
+         <input  class="inputText" placeholder="所在地" bindinput="addressInput" /> </view>
+        <button bindtap='changeInfo'>点击更改个人信息</button>
+        <button bindtap="offline">退出登录</button>
+      </view>
+    
+  </view>
+  
+
+  <view class="bottom">
+    <button style="width:25vw" bindtap="btsy"> 首页 </button>
+    <button style="width:25vw" bindtap="btgwc"> 购物车 </button>
+    <button style="width:25vw" bindtap="btdd"> 订单 </button>
+    <button style="width:25vw" bindtap="btwd"> 我的 </button>
+  </view>
+
+</view>
+
+
+<modal hidden="{{addkindhidden}}" title="添加菜单分类" confirm-text="确定" cancel-text="取消" bindcancel="addkindcancel" bindconfirm="addkindconfirm">
+    <input bindinput="kindinput"></input>
+    <modal hidden="{{warninghidden}}" title="请填写全部信息" confirm-text="确定" bindconfirm="warningconfirm" bindcancel="warningconfirm"></modal>
+    <modal hidden="{{existhidden}}" title="该分类已存在" confirm-text="确定" bindconfirm="existconfirm" bindcancel="existconfirm"></modal>
+</modal>
+
+<modal hidden="{{addmanuhidden}}" title="添加新菜品" confirm-text="确定" cancel-text="取消" bindcancel="addmanucancel" bindconfirm="addmanuconfirm">
+    <input value="" bindinput="nameinput"></input>
+    <input value="" type="digit" bindinput="priceinput"></input>
+    <modal hidden="{{warninghidden}}" title="请填写全部信息" confirm-text="确定" bindconfirm="warningconfirm" bindcancel="warningconfirm"></modal>
+    <modal hidden="{{existhidden}}" title="该菜品已存在" confirm-text="确定" bindconfirm="existconfirm" bindcancel="existconfirm"></modal>
+</modal>
